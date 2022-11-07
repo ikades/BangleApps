@@ -12,7 +12,7 @@ var layout = new Layout({type:"v", bgCol: g.theme.bg, c: [
       render: l => weather.drawIcon(l, l.x+l.w/2, l.y+l.h/2, l.w/2-5)},
     {type: "v", fillx: 1, c: [
       {type: "h", pad: 2, c: [
-        {type: "txt", font: "18%", id: "temp", label: "000"},
+        {type: "txt", font: "18%", id: "temp", label: "000.0"},
         {type: "txt", font: "12%", valign: -1, id: "tempUnit", label: "°C"},
       ]},
       {filly: 1},
@@ -21,8 +21,8 @@ var layout = new Layout({type:"v", bgCol: g.theme.bg, c: [
       {filly: 1},
       {type: "txt", font: "6x8", pad: 2, halign: -1, label: "Wind"},
       {type: "h", halign: -1, c: [
-        {type: "txt", font: "9%", pad: 2, id: "wind",  label: "00"},
-        {type: "txt", font: "6x8", pad: 2, valign: -1, id: "windUnit", label: "km/h"},
+        {type: "txt", font: "9%", pad: 2, id: "wind",  label: "00.0"},
+        {type: "txt", font: "6x8", pad: 2, valign: -1, id: "windUnit", label: "m/s"},
       ]},
     ]},
   ]},
