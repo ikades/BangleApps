@@ -12,7 +12,7 @@ Graphics.prototype.setFontIkades = function() {
   // Load fonts
   //require("Font7x11Numeric7Seg").add(Graphics);
   let offset = 0, offsetb = offset+6, off_x = 0, offset_poly=offset+10;
-  let X = 31, Y = offset+97;
+  let X = 30, Y = offset+99;
   let poly =   [35,offset_poly+63,103,offset_poly+63,106,offset_poly+66,106,offset_poly+89,103,offset_poly+92,35,offset_poly+92,32,offset_poly+89,32,offset_poly+66];
   let lock_poly = [0, offset_poly+63,26,offset_poly+63,29,offset_poly+66,29,offset_poly+89,26,offset_poly+92,0,offset_poly+92];
 
@@ -190,7 +190,7 @@ Graphics.prototype.setFontIkades = function() {
     g.clearRect(35,offset+74,69,offset+101);
     g.setFontAlign(1,1).setFont("Ikades",2);
     g.drawString(h_only, X, Y, true /*clear background*/);
-    g.drawString(m_only, X+30, Y, true /*clear background*/);
+    g.drawString(m_only, X+32, Y, true /*clear background*/);
     //g.drawString(s_only, X+68, Y, true /*clear background*/);
 
     licz = 1;
