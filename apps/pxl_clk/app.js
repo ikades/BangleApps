@@ -256,8 +256,12 @@ Graphics.prototype.setFontIkades = function() {
       g.drawImage(info.img, options.x+24,options.y+6);
     }
     var text = info.text.toString().toUpperCase();
-    if (g.setFont("Ikades:2").stringWidth(text)+10>options.w) g.setFont("Ikades");
-    g.setFontAlign(-1,-1).drawString(text, options.x+5+options.w/4, options.y+33);
+    var t_x = options.x+options.w/2, t_y = options.y+33;
+    if (g.setFont("Ikades:2").stringWidth(text)+20>options.w){
+      g.setFont("Ikades");
+      t_y += 6;
+    }
+    g.setFontAlign(0,-1).drawString(text, t_x, t_y);
   };
 
   let drawGauge = function(cx, cy, percent) {
