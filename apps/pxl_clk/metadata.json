@@ -2,7 +2,7 @@
   "id": "pxl_clk",
   "name": "Pixel Clock",
   "icon": "app.png",
-  "version":"0.04",
+  "version":"0.05",
   "description": "This is a clock in style of Pixel watch",
   "type":"clock",
   "tags": "clock,clkinfo",
