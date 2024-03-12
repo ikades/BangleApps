@@ -7,7 +7,7 @@ Graphics.prototype.setFontIkades = function() {
   let settings;
   let drawTimeout;
   let loadSettings = function() {
-    settings = require("Storage").readJSON(SETTINGS_FILE,1)|| {'bg': '#0ff', 'color': 'Cyan', 'showlock':true};
+    settings = require("Storage").readJSON(SETTINGS_FILE,1)|| {'bg': '#0ff', 'color': 'Cyan', 'd_or_i':'date', 'showlock':true};
   };
   // Load fonts
   //require("Font7x11Numeric7Seg").add(Graphics);
@@ -215,6 +215,12 @@ Graphics.prototype.setFontIkades = function() {
 
     g.drawPoly(poly,true);
 
+    if(settings.d_or_i == "date"){
+      g.setFontAlign(-1, -1).setFont("Ikades").drawString(require("locale").dow(d, 1).toUpperCase(), 129, 68);
+      g.setFontAlign(-1, -1).setFont("Ikades:2").drawString(d.getDate(), 109, 75+11);
+      g.setFontAlign(-1, -1).setFont("Ikades").drawString(require("locale").month(new Date(), 2).toUpperCase(), 139, 88+11);
+    }
+
     // queue next draw
     queueDraw();
   };
@@ -317,8 +323,10 @@ Graphics.prototype.setFontIkades = function() {
       delete clockInfoMenu;
       clockInfoMenu2.remove();
       delete clockInfoMenu2;
-      clockInfoMenu3.remove();
-      delete clockInfoMenu3;
+      if(settings.d_or_i == "3rd info"){
+        clockInfoMenu3.remove();
+        delete clockInfoMenu3;
+      }
       require("widget_utils").show();
     }});
 
@@ -330,5 +338,7 @@ Graphics.prototype.setFontIkades = function() {
   let clockInfoItems = require("clock_info").load();
   let clockInfoMenu = require("clock_info").addInteractive(clockInfoItems, { app:"lcdclock", x:100, y:1, w:74, h:58, draw : clockInfoDraw});
   let clockInfoMenu2 = require("clock_info").addInteractive(clockInfoItems, {  app:"lcdclock", x:107, y:59, w:68, h:58, draw : clockInfoDraw});
-  let clockInfoMenu3 = require("clock_info").addInteractive(clockInfoItems, {  app:"lcdclock", x:100, y:117, w:74, h:58, draw : clockInfoDraw});
+  if(settings.d_or_i == "3rd info"){
+    let clockInfoMenu3 = require("clock_info").addInteractive(clockInfoItems, {  app:"pxl_clock", x:107, y:59, w:68, h:58, draw : clockInfoDraw});
+  }
 }
