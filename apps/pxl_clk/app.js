@@ -1,5 +1,5 @@
-Graphics.prototype.setFont7Seg = function() {
-  return this.setFontCustom(atob("AAAAAAAAAAAACAQCAAAAAAIAd0BgMBdwAAAAAAAADuAAAB0RiMRcAAAAAiMRiLuAAAcAQCAQdwAADgiMRiIOAAAd0RiMRBwAAAAgEAgDuAAAd0RiMRdwAADgiMRiLuAAAABsAAAd0QiEQdwAADuCIRCIOAAAd0BgMBAAAAAOCIRCLuAAAd0RiMRAAAADuiEQiAAAAAd0BgMBBwAADuCAQCDuAAAdwAAAAAAAAAAAIBALuAAAdwQCAQdwAADuAIBAIAAAAd0AgEAcEAgEAdwAd0AgEAdwAADugMBgLuAAAd0QiEQcAAADgiEQiDuAAAd0AgEAAAAADgiMRiIOAAAAEAgEAdwAADuAIBALuAAAdwBAIBdwAADuAIBAIOAIBALuADuCAQCDuAAAcAQCAQdwAAAOiMRiLgAAAA=="), 32, atob("BwAAAAAAAAAAAAAAAAcCAAcHBwcHBwcHBwcEAAAAAAAABwcHBwcHBwcHBwcHCgcHBwcHBwcHBwoHBwc="), 9);
+Graphics.prototype.setFontIkades = function() {
+  return this.setFontCustom(atob("AAAAAAAAAAAAAAAAAAP9gAAAAAADAAAMAAAAAAAAAoH8CgfwKAAAADIJI/4kgmAAGBSMZgEAzGJQMAAx6UMYZMsGAYABgAAAAAAAAAA/jBsBwBAAAAAEAcBsGP4AAAAAFAOA4A4BQAAAAAgBAPgEAIAAAAAAAcAwAAAAAAAAAEAIAQAgBAAAAAAwBgAAAAAAAAABgMDgYDAAAAAPegDAGAL3gAAAAAAAAAAHvAAAAB6EMIYQvAAAAAAEIYQwhe8AAADwAQAgBA94AAAHgQhhDCEDwAAAPehDCGEIHgAAAABACAEAHvAAAA96EMIYQveAAAB4EIYQwhe8AAABjDGAAAAAAAAADHGMAAAAAAAAQBwCgNgRBjCCAAEQIgRAiBEAAIIYwRA2AoBwBAABgEAIOwgeAAAeBCEyKST0QoeQAH/QghBCB/wAAAP/hDCGEL3gAAAf9AGAMAQAAAAB/+AMAYAv+AAAB70IYQwBAAAAAD3oQQggAAAAAAH/QBhDCEDwAAAPeBACAED3gAAAABAH/8AQAAAABACAEAX/AAAAAB7wIAoCQYcAAAD/gAgBACAAAAAH/QAcBAB/wAAAP+EAHABD/gAAAf9AGAMAX/AAAA/6EEIIQPAAAAB/0AYGwDf8AAAD/oQQgig44AAAHhQhhDCFDwAAAQAgB/6AEAAAAAf8AEAIAX/AAAA/ABgAwGPwAAAB/wAQHgBf8AAADjgoAgCg44AAAHABAB8EBwAAAAQOgjCGILgQAf/gDAEAAAAAAAABgAwAcAGADABAGAP/wAAAAAAAYDAIAMAGAAAAAAAAABACAEAAAIAIAIAAAAAAAAAAA8CEEIIQfABAA/4EIIQQgeAAAADwIQQghAAAAAAHgQghBC/4AAAAPAlBKCUDAAAAP+hBABAAAAAAAAwCUEoJQNAAAA/4EAIAQAeAAAAAAAAvAAAAAAAAAAAgCC4AAAAAH/AQAgGgAwAAAP+ACAAAAAAAAAA8CAHAIAPAAAAB4EAIAQA+AAAADwIQQghA8AAAAHwSAkBIBgAAAAPAhBKCMDwAAAAeBACAAAAAAAAAkCkFIKQDAAAAIB/wgRAgAAAAADwAQAgBA8AAAAHABABAEBwAAAAPABAOAEDwAAAARAUAQBQEQAAAAwAUAoBQNAAAAAIEoJQUgQAACB102YAgAAAAAAAAAAf/AAAAAEAZsuuBAAAAAAAwCAEAEAEAIBgAAAAAAAAAAAAA"),32,7,11);
 };
 
 {
@@ -11,8 +11,8 @@ Graphics.prototype.setFont7Seg = function() {
   };
   // Load fonts
   //require("Font7x11Numeric7Seg").add(Graphics);
-  let offset = 0, offsetb = offset+5, off_x = 0, offset_poly=offset+10;
-  let X = 30, Y = offset+97;
+  let offset = 0, offsetb = offset+6, off_x = 0, offset_poly=offset+10;
+  let X = 31, Y = offset+97;
   let poly =   [35,offset_poly+63,103,offset_poly+63,106,offset_poly+66,106,offset_poly+89,103,offset_poly+92,35,offset_poly+92,32,offset_poly+89,32,offset_poly+66];
   let lock_poly = [0, offset_poly+63,26,offset_poly+63,29,offset_poly+66,29,offset_poly+89,26,offset_poly+92,0,offset_poly+92];
 
@@ -160,7 +160,7 @@ Graphics.prototype.setFont7Seg = function() {
         } else if (minutka ==70){
           minutka = 10;
         }
-        g.setFontAlign(1,1).setFont("7Seg").drawString(("0"+minutka).substr(-2),i[0],i[1]);
+        g.setFontAlign(1,1).setFont("Ikades").drawString(("0"+minutka).substr(-2),i[0],i[1]);
       }
       licz+=1;
       first_min_dot+=1;
@@ -181,16 +181,16 @@ Graphics.prototype.setFont7Seg = function() {
         } else if (secundka == 70){
           secundka = 10;
         }
-        g.setFontAlign(1,1).setFont("7Seg").drawString(("0"+secundka).substr(-2),i[0],i[1]);
+        g.setFontAlign(1,1).setFont("Ikades").drawString(("0"+secundka).substr(-2),i[0],i[1]);
       }
       licz+=1;
       first_sec_dot+=1;
     }
 
     g.clearRect(35,offset+74,69,offset+101);
-    g.setFontAlign(1,1).setFont("7Seg",2);
+    g.setFontAlign(1,1).setFont("Ikades",2);
     g.drawString(h_only, X, Y, true /*clear background*/);
-    g.drawString(m_only, X+32, Y, true /*clear background*/);
+    g.drawString(m_only, X+30, Y, true /*clear background*/);
     //g.drawString(s_only, X+68, Y, true /*clear background*/);
 
     licz = 1;
@@ -230,7 +230,7 @@ Graphics.prototype.setFont7Seg = function() {
 
   let clockInfoDraw = (itm, info, options) => {
     //let texty = options.y+41;
-    g.reset().setFont("7Seg");//.setColor(g.theme.bg).setBgColor(g.theme.fg);
+    g.reset().setFont("Ikades");//.setColor(g.theme.bg).setBgColor(g.theme.fg);
     if (options.focus) g.setBgColor(settings.bg);
     g.clearRect({x:options.x,y:options.y,w:options.w,h:options.h,r:8});
     if (itm.hasRange){
@@ -241,7 +241,7 @@ Graphics.prototype.setFont7Seg = function() {
       g.drawImage(info.img, options.x+24,options.y+6);
     }
     var text = info.text.toString().toUpperCase();
-    if (g.setFont("7Seg:2").stringWidth(text)+20>options.w) g.setFont("7Seg");
+    if (g.setFont(""Ikades:2").stringWidth(text)+20>options.w) g.setFont("Ikades");
     g.setFontAlign(-1,-1).drawString(text, options.x+5+options.w/4, options.y+33);
   };
 
