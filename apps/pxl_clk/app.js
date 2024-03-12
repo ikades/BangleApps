@@ -338,7 +338,8 @@ Graphics.prototype.setFontIkades = function() {
   let clockInfoItems = require("clock_info").load();
   let clockInfoMenu = require("clock_info").addInteractive(clockInfoItems, { app:"lcdclock", x:100, y:1, w:74, h:58, draw : clockInfoDraw});
   let clockInfoMenu2 = require("clock_info").addInteractive(clockInfoItems, {  app:"lcdclock", x:107, y:59, w:68, h:58, draw : clockInfoDraw});
+  let clockInfoMenu3;
   if(settings.d_or_i == "3rd info"){
-    let clockInfoMenu3 = require("clock_info").addInteractive(clockInfoItems, {  app:"pxl_clock", x:107, y:59, w:68, h:58, draw : clockInfoDraw});
+    clockInfoMenu3 = require("clock_info").addInteractive(clockInfoItems, {  app:"pxl_clock", x:107, y:59, w:68, h:58, draw : clockInfoDraw});
   }
 }
