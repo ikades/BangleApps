@@ -48,7 +48,7 @@ function formatDuration(millis) {
 function draw() {
   layout.icon.txt = current.txt;
   layout.icon.code = current.code;
-  const temp = locale.temp(current.temp-273.15, 2).match(/^(\D*\d*)[.](\D*\d*)(.*)$/);
+  const temp = locale.temp(current.temp-273.15).match(/^(\D*\d*)[.](\D*\d*)(.*)$/);
   layout.temp.label = temp[1]+"."+temp[2];
   layout.tempUnit.label = temp[3];
   layout.hum.label = current.hum+"%";
