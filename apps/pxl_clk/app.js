@@ -136,7 +136,7 @@ Graphics.prototype.setFontIkades = function() {
     // Reset the state of the graphics library
     g.reset();
     g.clearRect(0,0,100,59);
-    g.clearRect(31,59,107,117);
+    g.clearRect(0,59,107,117);
     g.clearRect(0,117,100,175);
 
     var min_time = m%5;
