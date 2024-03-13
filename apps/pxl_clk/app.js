@@ -283,14 +283,25 @@ Graphics.prototype.setFontIkades = function() {
     endRotation = (endRotation * Math.PI / 180) - amt;
     // all we need to draw is an arc, because we'll fill the center
     let poly = [cx,cy];
-    for (let r = startRotation; r > endRotation; r -= amt)
+    let poly_int = [cx, cy]; 
+    let kont = 1;
+    for (let r = startRotation; r > endRotation; r -= amt){
+      kont = Math.sqrt(Math.sqrt(1 - 0.5*Math.sin(2*r)*Math.sin(2*r)));
       poly.push(
-        cx + radius * Math.sin(r),
-        cy + radius * Math.cos(r)
-    );
+        cx + 1.05*radius * Math.sin(r)/kont,
+        cy + 1.05*radius * Math.cos(r)/kont
+        //cx + radius * Math.sin(r),
+        //cy + radius * Math.cos(r)
+      );
+      poly_int.push(
+        cx + 0.9*radius * Math.sin(r)/kont,
+        cy + 0.9*radius * Math.cos(r)/kont
+      );
+    }
     g.fillPoly(poly);
     g.setColor(g.theme.bg);
-    g.fillCircle(cx,cy,23);
+    g.fillPoly(poly_int);
+    //g.fillCircle(cx,cy,23);
     g.reset();
   };
 
