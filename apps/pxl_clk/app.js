@@ -136,7 +136,7 @@ Graphics.prototype.setFontIkades = function() {
     // Reset the state of the graphics library
     g.reset();
     g.clearRect(0,0,100,59);
-    g.clearRect(0,59,107,117);
+    g.clearRect(31,59,107,117);
     g.clearRect(0,117,100,175);
 
     var min_time = m%5;
@@ -193,6 +193,7 @@ Graphics.prototype.setFontIkades = function() {
     var s_m_only = m_only.substr(-1);
 
     g.clearRect(35,offset+74,69,offset+101);
+    g.clearRect(0,offset+77,28,offset+98);
     g.setFontAlign(1,1).setFont("Ikades",2);
     //g.drawString(h_only, X, Y, true /*clear background*/);
     //g.drawString(m_only, X+32, Y, true /*clear background*/);
