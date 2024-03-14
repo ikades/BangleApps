@@ -2,6 +2,10 @@ Graphics.prototype.setFontIkades = function() {
   return this.setFontCustom(atob("AAAAAAAP9gAYAABgAAAoH8CgfwKAABkEkf8SQTAADApGMwCAZjEoGMelDGGTLBgGMAAAfxg2A4AgAgDgNgx/AAKAcBwBwCgAAAgBAPgEAIAAAHAMAAEAIAQAgBAAAAYAwAADAYHAwGAAAPegDAGAL3gAPeAAB6EMIYQvAABCGEMIXvAAeACAEAIHvAAeBCGEMIQPAAe9CGEMIQPAAgBACAD3gAPehDCGEL3gAPAhDCGEL3gAGMMYAAxxjAAAgDgFAbAiDGEEEQIgRAiBEAAIIYwRA2AoBwBAwCAEHYQPAAAPAhCZFJJ6IUPJ/0IIQQgf8AB/8IYQwhe8AB/0AYAwBAB/+AMAYAv+AA96EMIYAgAe9CCEEAAAP+gDCGEIHgAPeBACAED3gAQB//AEAEAIAQBf8AB7wIAoCQYcAB/wAQAgBAA/6ADgIAP+AA/4QAcAEP+AA/6AMAYAv+AA/6EEIIQPAAA/6AMDYBv+AA/6EEIIoOOAA8KEMIYQoeABACAH/oAQAAA/4AIAQAv+AA/ABgAwGPwAA/4AIDwAv+AA44KAIAoOOAA4AIAPggOAABA6CMIYguBAB/+AMAQAYAMAHABgAwAQBgD/8AAwGAQAYAMAAAAQAgBABABABAAAAeBCCEEIPgAv+BCCEEIHgAAeBCCEEIAAPAhBCCF/wAAPAlBKCUDAAH/QggAgAAAGASglBKBoAD/gQAgBAB4AAXgAABAEFwAD/gIAQDQAYAD/gAgAA8CAHAIAPAAA8CAEAIAfAAA8CEEIIQPAAA+CQEgJAMAAA8CEEoIwPAAA8CAEAAAJApBSCkAwABAP+ECIEAAHgAgBACB4AAHABABAEBwAAHgAgHACB4AAEQFAEAUBEAAGACgFAKBoAAAgSglBSBAAAIHXTZgCAD/4AIAzZdcCAAAYBACACACAEAwAAAAAAAA="),32,atob("BAIEBgYHBgIFBQYGAwYDBgYCBgUGBgYFBgYDAwcGBwYHBgYFBgUFBgYEBQYFBgYGBgYGBgYGBgYGBgYEBgQGBAQGBgUGBgUGBgIEBgMGBgYGBgQGBQYGBgYGBgUCBQcE"),11);
 };
 
+Graphics.prototype.setFontIkadesTallN = function() {
+  return this.setFontCustom(atob("P//5///D//+f//zAAAAAADwAAAAAA8AAAAAAPAAAAAADwAAAAAA8AAAAAAPAAAAAADwAAAAAA8AAAAAAPAAAAAADP//5///D//+f//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///n//8P//5///AAAAf//wAAAH//8wAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAAz//+AAAA///gAAAAAAAAAAAAAAAAADAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADP//5///D//+f//w///gAAAP//4AAAAAABgAAAAAAYAAAAAAGAAAAAABgAAAAAAYAAAAAAGAAAAAABgAAAAAAYAAAAAAGAAAAAABgAAA///n//8P//5///D//+AAAA///gAAAwAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAAwAAAf//wAAAH//8P//5///D//+f//zAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADAAAB///AAAAf//wAAAAAAAAAAAAAAMAAAAAADAAAAAAAwAAAAAAMAAAAAADAAAAAAAwAAAAAAMAAAAAADAAAAAAAwAAAAAAMAAAAAAA///n//8P//5///D//+f//w///n//8wAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAAz//+f//w///n//8P//4AAAD//+AAADAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADwAAGAAA8AABgAAPAAAYAADP//5///D//+f//w="),48, 14, 44);
+};
+
 {
   const SETTINGS_FILE = "pxl_clk.json";
   let settings;
@@ -14,8 +18,9 @@ Graphics.prototype.setFontIkades = function() {
   let offset = 0, offsetb = offset+6, off_x = 0, offset_poly=offset+10;
   let X = 28, Y = offset+99;
   let poly =   [35,offset_poly+63,103,offset_poly+63,106,offset_poly+66,106,offset_poly+89,103,offset_poly+92,35,offset_poly+92,32,offset_poly+89,32,offset_poly+66];
-  let lock_poly = [0, offset_poly+63,26,offset_poly+63,29,offset_poly+66,29,offset_poly+89,26,offset_poly+92,0,offset_poly+92];
-
+  //let lock_poly = [0, offset_poly+63,26,offset_poly+63,29,offset_poly+66,29,offset_poly+89,26,offset_poly+92,0,offset_poly+92];
+  let lock_poly = [0, offset_poly+53,27,offset_poly+53,30,offset_poly+56,30,offset_poly+99,27,offset_poly+102,0,offset_poly+102];
+  
   let min_lista = [[off_x+1, offsetb+147],
                     [off_x+7, offsetb+146],
                     [off_x+13, offsetb+145],
@@ -193,12 +198,15 @@ Graphics.prototype.setFontIkades = function() {
     var s_m_only = m_only.substr(-1);
 
     g.clearRect(35,offset+74,69,offset+101);
-    g.clearRect(0,offset+77,28,offset+98);
-    g.setFontAlign(1,1).setFont("Ikades",2);
+    g.clearRect(0,offset+67,28,offset+108);
+    
+    
     //g.drawString(h_only, X, Y, true /*clear background*/);
     //g.drawString(m_only, X+32, Y, true /*clear background*/);
-    g.drawString(f_h_only, X-13, Y, true /*clear background*/);
-    g.drawString(s_h_only, X, Y, true /*clear background*/);
+    g.setFontAlign(1,0).setFont("IkadesTallN");
+    g.drawString(f_h_only, X-13, Y-11, true /*clear background*/);
+    g.drawString(s_h_only, X+1, Y-11, true /*clear background*/);
+    g.setFontAlign(1,1).setFont("Ikades",2);
     g.drawString(f_m_only, X+19, Y, true /*clear background*/);
     g.drawString(s_m_only, X+32, Y, true /*clear background*/);
     //g.drawString(s_only, X+68, Y, true /*clear background*/);
