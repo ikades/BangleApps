@@ -20,7 +20,7 @@ Graphics.prototype.setFontIkadesTallN = function() {
   let poly =   [36,offset_poly+63,103,offset_poly+63,106,offset_poly+66,106,offset_poly+89,103,offset_poly+92,36,offset_poly+92,33,offset_poly+89,33,offset_poly+66];
   //let lock_poly = [0, offset_poly+63,26,offset_poly+63,29,offset_poly+66,29,offset_poly+89,26,offset_poly+92,0,offset_poly+92];
   let lock_poly = [0, offset_poly+53,28,offset_poly+53,31,offset_poly+56,31,offset_poly+99,28,offset_poly+102,0,offset_poly+102];
-  let lock_poly_ = [0, offset_poly+52,28,offset_poly+52,31,offset_poly+55,31,offset_poly+100,28,offset_poly+103,0,offset_poly+103];
+  let lock_poly_ = [0, offset_poly+52,28,offset_poly+52,32,offset_poly+56,32,offset_poly+99,28,offset_poly+103,0,offset_poly+103];
   
   let min_lista = [[off_x+1, offsetb+147],
                     [off_x+7, offsetb+146],
@@ -142,7 +142,7 @@ Graphics.prototype.setFontIkadesTallN = function() {
     // Reset the state of the graphics library
     g.reset();
     g.clearRect(0,0,100,59);
-    g.clearRect(32,59,107,117);
+    g.clearRect(33,59,107,117);
     g.clearRect(0,117,100,175);
 
     var min_time = m%5;
@@ -208,7 +208,7 @@ Graphics.prototype.setFontIkadesTallN = function() {
     g.drawString(f_h_only, X-13, Y-11, true /*clear background*/);
     g.drawString(s_h_only, X+2, Y-11, true /*clear background*/);
     g.setFontAlign(1,1).setFont("Ikades",2);
-    g.drawString(f_m_only, X+20, Y, true /*clear background*/);
+    g.drawString(f_m_only, X+21, Y, true /*clear background*/);
     g.drawString(s_m_only, X+33, Y, true /*clear background*/);
     //g.drawString(s_only, X+68, Y, true /*clear background*/);
 
