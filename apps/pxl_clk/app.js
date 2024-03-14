@@ -20,6 +20,7 @@ Graphics.prototype.setFontIkadesTallN = function() {
   let poly =   [36,offset_poly+63,103,offset_poly+63,106,offset_poly+66,106,offset_poly+89,103,offset_poly+92,36,offset_poly+92,33,offset_poly+89,33,offset_poly+66];
   //let lock_poly = [0, offset_poly+63,26,offset_poly+63,29,offset_poly+66,29,offset_poly+89,26,offset_poly+92,0,offset_poly+92];
   let lock_poly = [0, offset_poly+53,28,offset_poly+53,31,offset_poly+56,31,offset_poly+99,28,offset_poly+102,0,offset_poly+102];
+  let lock_poly_ = [0, offset_poly+52,28,offset_poly+52,31,offset_poly+55,31,offset_poly+100,28,offset_poly+103,0,offset_poly+103];
   
   let min_lista = [[off_x+1, offsetb+147],
                     [off_x+7, offsetb+146],
@@ -316,14 +317,14 @@ Graphics.prototype.setFontIkadesTallN = function() {
   let drawLock = function(){
     if(settings.showlock){
       var color = "#ff0000";
-      g.setColor(g.theme.bg);
-      g.drawPoly(lock_poly,false);
       var c = Bangle.isLocked() ? color : g.theme.bg;
       g.setColor(c);
       g.drawPoly(lock_poly,false);
+      g.drawPoly(lock_poly_,false);
     } else {
       g.setColor(g.theme.bg);
       g.drawPoly(lock_poly,false);
+      g.drawPoly(lock_poly_,false);
     }
   };
 
