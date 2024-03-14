@@ -17,9 +17,9 @@ Graphics.prototype.setFontIkadesTallN = function() {
   //require("Font7x11Numeric7Seg").add(Graphics);
   let offset = 0, offsetb = offset+6, off_x = 0, offset_poly=offset+10;
   let X = 28, Y = offset+99;
-  let poly =   [35,offset_poly+63,103,offset_poly+63,106,offset_poly+66,106,offset_poly+89,103,offset_poly+92,35,offset_poly+92,32,offset_poly+89,32,offset_poly+66];
+  let poly =   [36,offset_poly+63,103,offset_poly+63,106,offset_poly+66,106,offset_poly+89,103,offset_poly+92,36,offset_poly+92,33,offset_poly+89,33,offset_poly+66];
   //let lock_poly = [0, offset_poly+63,26,offset_poly+63,29,offset_poly+66,29,offset_poly+89,26,offset_poly+92,0,offset_poly+92];
-  let lock_poly = [0, offset_poly+53,27,offset_poly+53,30,offset_poly+56,30,offset_poly+99,27,offset_poly+102,0,offset_poly+102];
+  let lock_poly = [0, offset_poly+53,28,offset_poly+53,31,offset_poly+56,31,offset_poly+99,28,offset_poly+102,0,offset_poly+102];
   
   let min_lista = [[off_x+1, offsetb+147],
                     [off_x+7, offsetb+146],
@@ -141,7 +141,7 @@ Graphics.prototype.setFontIkadesTallN = function() {
     // Reset the state of the graphics library
     g.reset();
     g.clearRect(0,0,100,59);
-    g.clearRect(31,59,107,117);
+    g.clearRect(32,59,107,117);
     g.clearRect(0,117,100,175);
 
     var min_time = m%5;
@@ -205,10 +205,10 @@ Graphics.prototype.setFontIkadesTallN = function() {
     //g.drawString(m_only, X+32, Y, true /*clear background*/);
     g.setFontAlign(1,0).setFont("IkadesTallN");
     g.drawString(f_h_only, X-13, Y-11, true /*clear background*/);
-    g.drawString(s_h_only, X+1, Y-11, true /*clear background*/);
+    g.drawString(s_h_only, X+2, Y-11, true /*clear background*/);
     g.setFontAlign(1,1).setFont("Ikades",2);
-    g.drawString(f_m_only, X+19, Y, true /*clear background*/);
-    g.drawString(s_m_only, X+32, Y, true /*clear background*/);
+    g.drawString(f_m_only, X+20, Y, true /*clear background*/);
+    g.drawString(s_m_only, X+33, Y, true /*clear background*/);
     //g.drawString(s_only, X+68, Y, true /*clear background*/);
 
     licz = 1;
