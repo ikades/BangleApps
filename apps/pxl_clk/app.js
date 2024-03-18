@@ -258,10 +258,10 @@ Graphics.prototype.setFontIkadesTallN = function() {
     g.reset().setFont("Ikades");//.setColor(g.theme.bg).setBgColor(g.theme.fg);
     if (options.focus) g.setBgColor(settings.bg);
     g.clearRect({x:options.x,y:options.y,w:options.w,h:options.h,r:8});
-    if (itm.hasRange){
-      var proc = info.v/info.max;
-      drawGauge(options.x+options.w/2,options.y+options.h/2,proc);
-    }
+    var proc = 0;
+    if (itm.hasRange) proc = (info.v-info.min)/(info.max-info.min);
+    drawGauge(options.x+options.w/2,options.y+options.h/2,proc);
+    
     if (info.img) {
       g.drawImage(info.img, options.x+24,options.y+6);
     }
